@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>أكاديمية العمدة لكرة القدم</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap">
+<style>
+:root{color-scheme:light;--bg:#f4fbf3;--card:#fff;--text:#14301f;--muted:#5d7566;--brand:#1f9d4d;--brand2:#157a3a;--accent:#ffc107;--line:#d6ecd9;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Cairo',system-ui,'Segoe UI',Tahoma,sans-serif;line-height:1.8;padding-bottom:78px}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+.hero{position:relative;overflow:hidden;color:var(--text);text-align:center;padding:40px 20px 0;background:radial-gradient(circle at 88% 14%,#ffd43b 0 34px,rgba(255,212,59,.35) 35px 64px,transparent 65px),linear-gradient(180deg,#bfe6ff 0%,#e6f6ff 70%,#f4fbf3 100%)}
+.hero h1{font-size:clamp(30px,8vw,56px);margin:10px 0 4px;font-weight:900;line-height:1.3}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.hero p{max-width:580px;margin:0 auto 24px;font-size:18px;opacity:.95}
+.btn{display:inline-block;background:var(--accent);color:#1a1a1a;font-weight:700;padding:12px 26px;border-radius:999px;text-decoration:none;margin:4px}
+.btn.alt{background:var(--brand);color:#fff}
+.btn.ghost{background:#fff;color:var(--brand2);border:2px solid var(--brand);padding:10px 24px}
+.btn.light{background:#fff;color:#157a3a}
+.turf{position:relative;height:130px;margin:34px -20px 0;background:repeating-linear-gradient(90deg,#5cc46f 0 60px,#52b866 60px 120px);border-radius:50% 50% 0 0/40px 40px 0 0;border-top:3px solid rgba(255,255,255,.85)}
+.turf::before{content:"";position:absolute;left:50%;top:18px;width:150px;height:70px;margin-left:-75px;border:3px solid rgba(255,255,255,.55);border-radius:50%}
+.turf .ball{position:absolute;left:50%;top:-30px;width:64px;height:64px;margin-left:-32px;animation:hop 1.7s ease-in-out infinite;filter:drop-shadow(0 8px 6px rgba(0,0,0,.35))}
+@keyframes hop{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-28px) rotate(180deg)}}
+@media (prefers-reduced-motion:reduce){.turf .ball{animation:none}html{scroll-behavior:auto}}
+.stats{position:relative;display:grid;grid-template-columns:repeat(3,1fr);max-width:720px;margin:-34px auto 0;background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:0 12px 30px rgba(21,122,58,.2);padding:14px 6px;text-align:center}
+.stats b{display:block;font-size:30px;font-weight:900;color:var(--brand);line-height:1.2}
+.stats span{font-size:13px;color:var(--muted)}
+section{padding:52px 0 8px}
+h2{font-size:28px;margin:0 0 6px;color:var(--brand);font-weight:900;display:flex;align-items:center;gap:10px}
+h2::before{content:"";width:8px;height:28px;border-radius:4px;background:var(--accent)}
+.sub{color:var(--muted);margin:0 0 24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 6px 18px rgba(31,157,77,.12)}
+.card h3{margin:0 0 4px;font-size:19px}
+.card p{margin:0;color:var(--muted)}
+.ic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand2),var(--brand));color:#fff;margin-bottom:12px}
+.ic svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.jersey{text-align:center}
+.jersey svg{width:104px;height:104px;display:block;margin:0 auto 6px;filter:drop-shadow(0 6px 6px rgba(0,0,0,.2))}
+.ticket{display:flex;align-items:center;gap:16px;padding:22px;border-radius:20px;color:var(--text);background:linear-gradient(135deg,#fff3b8,#fff);border:2px solid #ffd43b;box-shadow:0 8px 20px rgba(224,180,0,.2)}
+.ticket .day{font-size:26px;font-weight:900;flex:1}
+.ticket .day small{display:block;font-size:13px;font-weight:400;opacity:.85}
+.ticket .time{border-right:2px dashed #e0b400;padding-right:16px;text-align:center;font-weight:900;font-size:26px;line-height:1.3}
+.ticket .time small{display:block;font-size:14px;font-weight:700;color:#b87d00}
+.price{font-size:34px;font-weight:900;color:var(--brand);line-height:1.2}
+.price small{font-size:14px;color:var(--muted);font-weight:400}
+.cta{margin-top:56px;background:repeating-linear-gradient(90deg,#7fd68a 0 70px,#74cd80 70px 140px);color:#0f3d1e;text-align:center;padding:52px 20px 56px;border-top:4px solid #fff}
+.cta h2{justify-content:center;color:#0f3d1e}
+.cta h2::before{display:none}
+.cta .sub{color:#17482a}
+footer{text-align:center;color:var(--muted);padding:22px;font-size:14px}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-top:1px solid var(--line)}
+.dock a{flex:1;text-align:center;padding:10px 4px;border-radius:12px;font-weight:700;font-size:15px;color:#fff;text-decoration:none}
+.dock .s{background:var(--accent);color:#1a1a1a}.dock .c{background:#1d7fd6}.dock .w{background:#1fa855}
+.sg{margin-bottom:22px}
+.sg h3{display:flex;align-items:center;gap:8px;margin:0 0 10px;font-size:20px}
+.sg h3 i{width:14px;height:14px;border-radius:50%;background:var(--c)}
+.sg h3 small{font-size:14px;font-weight:400;color:var(--muted)}
+.sg .ticket{border-color:var(--c);background:linear-gradient(135deg,var(--c2),#fff);box-shadow:0 6px 16px rgba(0,0,0,.08)}
+.sg .ticket .time{border-right-color:var(--c)}
+.sg .ticket .time small{color:var(--text);opacity:.7}
+.g1{--c:#1664d9;--c2:#dcebff}.g2{--c:#ffc107;--c2:#fff3b8}.g3{--c:#2f9e4f;--c2:#d9f3df}
+.btn.wa{background:#1fa855;color:#fff}
+.trial{display:grid;gap:18px;align-items:center;grid-template-columns:1fr;background:linear-gradient(135deg,#fff3b8,#fff);border:2px solid #ffd43b;border-radius:22px;padding:26px;box-shadow:0 8px 20px rgba(224,180,0,.2);color:var(--text)}
+@media(min-width:700px){.trial{grid-template-columns:1fr auto}}
+.trial h2{margin-bottom:6px}
+.checks{list-style:none;margin:8px 0 0;padding:0}
+.checks li{margin:6px 0}
+.checks li::before{content:"✓";display:inline-grid;place-items:center;width:22px;height:22px;margin-left:8px;border-radius:50%;background:var(--brand);color:#fff;font-size:13px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:2px 16px;margin-bottom:10px}
+.faq summary{cursor:pointer;font-weight:700;padding:10px 0;list-style:none;display:flex;justify-content:space-between;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--brand);font-size:24px;line-height:1}
+.faq details[open] summary::after{content:"−"}
+.faq details p{margin:0 0 12px;color:var(--muted)}
+.live{margin:14px auto 0;max-width:720px;text-align:center;font-weight:700;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 14px}
+.live b{color:var(--brand)}
+.dot{display:inline-block;width:10px;height:10px;margin-left:8px;border-radius:50%;background:#e53935;animation:pulse 1.2s infinite}
+@keyframes pulse{50%{opacity:.25}}
+.finder input{width:100%;font:inherit;font-size:20px;padding:14px 18px;border-radius:14px;border:2px solid var(--line);background:var(--card);color:var(--text)}
+.finder input:focus{outline:none;border-color:var(--brand)}
+#res{margin-top:14px}
+.res{background:var(--card);border:2px solid var(--c,var(--brand));border-radius:18px;padding:18px}
+.res h3{margin:0 0 4px}.res p{margin:0 0 12px;color:var(--muted)}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{transition:none}.dot{animation:none}}
+.topnav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:center;gap:4px;padding:calc(8px + env(safe-area-inset-top,0px)) 8px 8px;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);transform:translateY(-110%);transition:transform .3s}
+.topnav.on{transform:none}
+.topnav a{padding:6px 8px;border-radius:999px;color:var(--brand2);font-weight:700;font-size:14px;text-decoration:none}
+.topnav a:active{background:var(--line)}
+.pc-wrap{display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:center}
+.pc{width:260px;border-radius:22px;padding:16px;color:#3a2a00;background:linear-gradient(160deg,#fff3b8,#ffd43b 55%,#f5b301);border:3px solid #b87d00;box-shadow:0 16px 30px rgba(184,125,0,.35);transform:rotate(-2deg);transition:transform .3s}
+.pc:hover{transform:rotate(0) scale(1.03)}
+.pc .top{display:flex;justify-content:space-between;font-weight:900}
+.pc .no{font-size:42px;line-height:1}
+.pc .pl{display:block;width:120px;height:120px;margin:4px auto}
+.pc .nm{text-align:center;font-weight:900;font-size:20px;border-top:2px solid rgba(58,42,0,.3);padding-top:6px}
+.pc .bt{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.pc .ok{background:#157a3a;color:#fff;font-size:13px;font-weight:700;padding:4px 10px;border-radius:999px}
+.pc .qr{width:58px;height:58px;background:#fff;padding:3px;border-radius:6px}
+.pc-txt{max-width:340px}
+.tag{display:inline-block;background:var(--accent);color:#1a1a1a;font-weight:700;font-size:13px;padding:2px 12px;border-radius:999px;margin-bottom:6px}
+button.btn{border:0;font:inherit;font-weight:700;cursor:pointer}
+.pay{text-align:center}
+.pm{display:inline-block;font-weight:900;font-size:20px;padding:4px 18px;border-radius:999px;color:#fff;margin-bottom:8px}
+.pm.ip{background:#6a2c91}.pm.vf{background:#e60000}
+.pv{font-size:22px;font-weight:900;margin:6px 0 12px;word-break:break-all;color:var(--text)}
+.paysteps{margin:22px 0 0;padding:0;list-style:none;counter-reset:s;display:grid;gap:10px}
+.paysteps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 16px 10px 14px;display:flex;align-items:center;gap:12px}
+.paysteps li::before{content:counter(s,arabic-indic);flex:none;width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:900}
+.paycta{text-align:center;margin-top:18px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="ball" viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="#fff" stroke="#0f1c33" stroke-width="3"/><polygon points="50,30 69,44 62,66 38,66 31,44" fill="#0f1c33"/><path d="M50 30V5M69 44l25-8M62 66l15 21M38 66L23 87M31 44L6 36" stroke="#0f1c33" stroke-width="3" fill="none"/></symbol>
+<symbol id="shirt" viewBox="0 0 100 100"><path d="M30 8L8 24l12 20 10-7v55h40V37l10 7 12-20L70 8c-5 9-35 9-40 0z" stroke="#fff" stroke-width="3" stroke-linejoin="round"/></symbol>
+</defs></svg>
+
+<header class="hero">
+  <svg class="logo" viewBox="0 0 100 116" width="92" height="107" role="img" aria-label="شعار العمدة"><path d="M50 4L94 20V58C94 86 74 104 50 112 26 104 6 86 6 58V20Z" fill="#157a3a" stroke="#ffc107" stroke-width="5"/><use href="#ball" x="24" y="24" width="52" height="52"/><text x="50" y="96" text-anchor="middle" font-size="14" font-weight="900" fill="#ffc107" font-family="Cairo,sans-serif">العمدة</text></svg>
+  <h1>أكاديمية <em>العمدة</em><br>لكرة القدم</h1>
+  <p>نبني لاعبين بنحبهم قبل ما نبنيهم: تدريب حقيقي، ومتابعة، وروح فريق لكل الأعمار لحد ١٨ سنة.</p>
+  <a class="btn" href="https://wa.me/201142033548?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D8%AD%D8%B5%D8%A9%20%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9%20%D9%81%D9%8A%20%D8%A3%D9%83%D8%A7%D8%AF%D9%8A%D9%85%D9%8A%D8%A9%20%D8%A7%D9%84%D8%B9%D9%85%D8%AF%D8%A9.%0A%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D9%84%D8%A7%D8%B9%D8%A8%3A%20%0A%D8%A7%D9%84%D8%B3%D9%86%3A%20">احجز حصة تجربة</a>
+  <a class="btn ghost" href="https://docs.google.com/forms/d/e/1FAIpQLScKnGyQJm1tVAwCmLIBW-2SmKTeUDIll0J1OcExLEVU18pzGQ/viewform" target="_blank" rel="noopener">اشترك دلوقتي</a>
+  <div class="turf"><svg class="ball" aria-hidden="true"><use href="#ball"/></svg></div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div><b data-n='3'>٣</b><span>مراحل سنية</span></div>
+    <div><b data-n='2'>٢</b><span>تمرين كل أسبوع</span></div>
+    <div><b data-n='18'>١٨</b><span>سنة أقصى سن</span></div>
+  </div>
+  <div class='live' id='live'></div>
+
+  <section id="about">
+    <h2>عن الأكاديمية</h2>
+    <p class="sub">مكان بيتعلم فيه اللاعب الكورة صح، وبيكبر فيه بثقة وانضباط.</p>
+    <div class="grid">
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M7 4h10v5a5 5 0 0 1-10 0V4zM7 6H3v2a4 4 0 0 0 4 4M17 6h4v2a4 4 0 0 1-4 4M12 14v4M8 20h8"/></svg></div><h3>تدريب منظم</h3><p>برنامج واضح لكل مرحلة سنية بيطوّر المهارة واللياقة خطوة بخطوة.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M16 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2M9.5 10a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM21 20v-2a4 4 0 0 0-3-3.9M16 3.1a3.5 3.5 0 0 1 0 6.8"/></svg></div><h3>مجموعات حسب السن</h3><p>كل لاعب بيتدرب مع اللي في سنه، عشان التطور يبقى آمن وممتع.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 4h6v3H9zM8 5H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 14l2 2 4-4"/></svg></div><h3>متابعة وانتظام</h3><p>حضور واشتراكات متابعة بنظام منظم، وأولياء الأمور دايمًا عارفين.</p></div>
+    </div>
+  </section>
+
+  <section id="groups">
+    <h2>المراحل السنية</h2>
+    <p class="sub">من الأطفال لحد ١٨ سنة.</p>
+    <div class="grid">
+      <div class="card jersey"><svg viewBox="0 0 100 100"><use href="#shirt" fill="#1664d9"/><text x="50" y="66" text-anchor="middle" font-size="19" font-weight="900" fill="#fff" font-family="Cairo,sans-serif">٥–٨</text></svg><h3>الأطفال</h3><p>٥ – ٨ سنوات: حب الكورة واللعب.</p></div>
+      <div class="card jersey"><svg viewBox="0 0 100 100"><use href="#shirt" fill="#ffc107"/><text x="50" y="66" text-anchor="middle" font-size="19" font-weight="900" fill="#0b2e6b" font-family="Cairo,sans-serif">٩–١٢</text></svg><h3>الناشئين</h3><p>٩ – ١٢ سنة: أساسيات المهارة والتمرير.</p></div>
+      <div class="card jersey"><svg viewBox="0 0 100 100"><use href="#shirt" fill="#2f9e4f"/><text x="50" y="66" text-anchor="middle" font-size="17" font-weight="900" fill="#fff" font-family="Cairo,sans-serif">١٣–١٨</text></svg><h3>الشباب</h3><p>١٣ – ١٨ سنة: تكتيك ولياقة ومباريات.</p></div>
+    </div>
+  </section>
+
+  <section id='finder'>
+    <h2>ابنك في أنهي مجموعة؟</h2>
+    <p class='sub'>اكتب سنه وهنقولك المجموعة والميعاد.</p>
+    <div class='finder'><input id='age' type='text' inputmode='numeric' maxlength='2' placeholder='سن اللاعب، مثلًا ٩' aria-label='سن اللاعب'></div>
+    <div id='res' aria-live='polite'></div>
+  </section>
+
+  <section id="schedule">
+    <h2>مواعيد الأكاديمية</h2>
+    <p class="sub">الأكاديمية شغّالة كل اتنين وخميس.</p>
+    <div class="sg g3">
+      <div class="grid">
+        <div class="ticket"><div class="day">الاتنين<small>كل أسبوع</small></div><div class="time">٤ – ١٠<small>مساءً</small></div></div>
+        <div class="ticket"><div class="day">الخميس<small>كل أسبوع</small></div><div class="time">٤ – ١٠<small>مساءً</small></div></div>
+      </div>
+    </div>
+    <div class="card" style="border:2px solid #ffd43b;background:linear-gradient(135deg,#fff3b8,#fff)">
+      <span class="tag">جديد</span>
+      <h3>تمارين Private</h3>
+      <p>تمرين خاص للاعب مع مدرب. المواعيد والسعر بنتفق عليهم على واتساب.</p>
+      <a class="btn wa" style="margin-top:12px" href="https://wa.me/201142033548?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B3%D8%A3%D9%84%20%D8%B9%D9%86%20%D8%AA%D9%85%D8%A7%D8%B1%D9%8A%D9%86%20Private%20%D9%81%D9%8A%20%D8%A3%D9%83%D8%A7%D8%AF%D9%8A%D9%85%D9%8A%D8%A9%20%D8%A7%D9%84%D8%B9%D9%85%D8%AF%D8%A9.%0A%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D9%84%D8%A7%D8%B9%D8%A8%3A%20%0A%D8%A7%D9%84%D8%B3%D9%86%3A%20">💬 اسأل عن الـ Private</a>
+    </div>
+  </section>
+
+  <section id="location">
+    <h2>فين مكاننا</h2>
+    <p class="sub">اضغط وهتفتحلك الخريطة وتوصلنا بسهولة.</p>
+    <div class="card" style="text-align:center">
+      <div class="ic" style="margin:0 auto 12px"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></svg></div>
+      <h3>فين مكاننا</h3>
+      <p style="margin-bottom:4px;font-weight:700;color:var(--text)">شبرا الخيمة - الشارع الجديد</p>
+      <p style="margin-bottom:14px">افتح الموقع على خرائط جوجل واعرف الاتجاهات من مكانك.</p>
+      <a class="btn alt" href="https://maps.app.goo.gl/6x4cdgmoPNxp3VCg8" target="_blank" rel="noopener">📍 افتح على الخريطة</a>
+    </div>
+  </section>
+
+  <section id="prices">
+    <h2>الاشتراكات</h2>
+    <p class="sub">اختار المدة المناسبة ليك.</p>
+    <div class="grid">
+      <div class="card"><h3>شهري</h3><div class="price">٤٠٠ <small>جنيه / شهر</small></div></div>
+      <div class="card"><h3>٣ شهور</h3><div class="price">١٠٠٠ <small>جنيه</small></div></div>
+      <div class="card"><h3>٦ شهور</h3><div class="price">٢٠٠٠ <small>جنيه</small></div></div>
+    </div>
+  </section>
+  <section id="pay">
+    <h2>ادفع أونلاين</h2>
+    <p class="sub">مش لازم تيجي الأكاديمية: حوّل الاشتراك من موبايلك في ثواني.</p>
+    <div class="grid">
+      <div class="card pay"><div class="pm ip">إنستاباي</div><p>حوّل على العنوان ده:</p><div class="pv" dir="ltr">alaaibrahim237@instapay</div><button class="btn alt cp" type="button" data-copy="alaaibrahim237@instapay">نسخ العنوان</button></div>
+      <div class="card pay"><div class="pm vf">فودافون كاش</div><p>حوّل على الرقم ده:</p><div class="pv" dir="ltr">01142033548</div><button class="btn alt cp" type="button" data-copy="01142033548">نسخ الرقم</button></div>
+    </div>
+    <ol class="paysteps">
+      <li>اختار مدة الاشتراك: شهري ٤٠٠ جنيه، أو ٣ شهور ١٠٠٠ جنيه، أو ٦ شهور ٢٠٠٠ جنيه.</li>
+      <li>حوّل المبلغ على إنستاباي أو فودافون كاش.</li>
+      <li>اضغط «سجّل دفعتك» واملا الفورم (اسم اللاعب، المدة، طريقة الدفع).</li>
+      <li>ابعتلنا صورة التحويل على واتساب.</li>
+      <li>هنفعّل الاشتراك ونأكدلك.</li>
+    </ol>
+    <div class="paycta"><a class="btn" id="payform" href="https://docs.google.com/forms/d/e/1FAIpQLScCBQvv4uK7hQT0SjftQtLO000tIOgnpoFt3az7QCMoUDi2dw/viewform" target="_blank" rel="noopener">📝 سجّل دفعتك</a> <a class="btn wa" id="paywa" href="#pay">💬 ابعت صورة التحويل على واتساب</a></div>
+  </section>
+  <section id='card'>
+    <div class='pc-wrap'>
+      <div class='pc'>
+        <div class='top'><div><div class='no'>١٠</div><div>الناشئين</div></div><svg width='42' height='42' aria-hidden='true'><use href='#ball' width='42' height='42'/></svg></div>
+        <svg class='pl' viewBox='0 0 100 100' aria-hidden='true'><circle cx='50' cy='34' r='18' fill='#3a2a00' fill-opacity='.8'/><path d='M14 96c2-26 18-38 36-38s34 12 36 38z' fill='#157a3a'/></svg>
+        <div class='nm'>اسم اللاعب</div>
+        <div class='bt'><span class='ok'>✓ اشتراك ساري</span><div class='qr' id='pqr'></div></div>
+      </div>
+      <div class='pc-txt'>
+        <span class='tag'>قريبًا</span>
+        <h2>كارت اللاعب الرقمي</h2>
+        <p class='sub'>كل لاعب هيبقى معاه كارت بـ QR يثبت هويته وحالة اشتراكه. (الكارت هنا نموذج توضيحي)</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="trial">
+    <div class="trial">
+      <div>
+        <h2>ابدأ بحصة تجربة</h2>
+        <p class="sub" style="margin-bottom:0">جرّب قبل ما تشترك، وشوف الأكاديمية بنفسك.</p>
+        <ul class="checks">
+          <li>مجموعات حسب السن من ٥ لحد ١٨ سنة</li>
+          <li>تمرينتين كل أسبوع، الاتنين والخميس</li>
+          <li>تمارين Private متاحة</li>
+          <li>حضور مسجّل بـ QR لكل تمرين</li>
+          <li>أولياء الأمور دايمًا عارفين الموضوع</li>
+        </ul>
+      </div>
+      <a class="btn wa" href="https://wa.me/201142033548?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D8%AD%D8%B5%D8%A9%20%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9%20%D9%81%D9%8A%20%D8%A3%D9%83%D8%A7%D8%AF%D9%8A%D9%85%D9%8A%D8%A9%20%D8%A7%D9%84%D8%B9%D9%85%D8%AF%D8%A9.%0A%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D9%84%D8%A7%D8%B9%D8%A8%3A%20%0A%D8%A7%D9%84%D8%B3%D9%86%3A%20">💬 احجز من واتساب</a>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>أسئلة شائعة</h2>
+    <p class="sub">إجابات سريعة لأكتر الأسئلة اللي بتتكرر.</p>
+    <div class="faq">
+      <details><summary>هل فيه حصة تجربة؟</summary><p>أيوه، ابعتلنا على واتساب ونحجزلك حصة تجربة قبل ما تشترك.</p></details>
+      <details><summary>من سن كام لسن كام؟</summary><p>من ٥ لحد ١٨ سنة، ومقسمين ثلاث مجموعات: الأطفال والناشئين والشباب.</p></details>
+      <details><summary>التمارين إمتى؟</summary><p>الأكاديمية شغّالة كل اتنين وخميس من ٤ لحد ١٠ مساءً.</p></details>
+      <details><summary>فيه تمارين Private؟</summary><p>أيوه، كلمنا على واتساب ونتفق على الميعاد.</p></details>
+      <details><summary>الاشتراك بكام؟</summary><p>٤٠٠ جنيه في الشهر، أو ١٠٠٠ جنيه لـ ٣ شهور، أو ٢٠٠٠ جنيه لـ ٦ شهور.</p></details>
+      <details><summary>ينفع أدفع من البيت؟</summary><p>أيوه، تقدر تدفع بإنستاباي أو فودافون كاش من غير ما تيجي الأكاديمية، وتبعتلنا صورة التحويل على واتساب.</p></details>
+      <details><summary>إزاي أشترك؟</summary><p>اضغط على زرار «اشترك دلوقتي» واملأ النموذج، أو كلمنا على الموبايل أو الواتساب.</p></details>
+      <details><summary>إزاي بيتسجل حضور اللاعب؟</summary><p>عند مدخل الأكاديمية فيه كود QR، اللاعب بيصوره بكاميرا الموبايل، يكتب اسمه، ويضغط إرسال.</p></details>
+    </div>
+  </section>
+</div>
+
+<section id="contact" class="cta">
+  <h2>تواصل معانا</h2>
+  <p class="sub">ابعتلنا رسالة ونحجزلك حصة تجربة.</p>
+  <a class="btn light" href="tel:+201142033548">📞 اتصل بينا <span dir="ltr">01142033548</span></a>
+  <a class="btn" href="https://wa.me/201142033548?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D8%AD%D8%B5%D8%A9%20%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9%20%D9%81%D9%8A%20%D8%A3%D9%83%D8%A7%D8%AF%D9%8A%D9%85%D9%8A%D8%A9%20%D8%A7%D9%84%D8%B9%D9%85%D8%AF%D8%A9.%0A%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D9%84%D8%A7%D8%B9%D8%A8%3A%20%0A%D8%A7%D9%84%D8%B3%D9%86%3A%20">💬 احجز تجربة على واتساب</a>
+</section>
+
+<footer>© أكاديمية العمدة ⚽</footer>
+
+<nav class='topnav' id='topnav' aria-label='أقسام الموقع'><a href='#groups'>المراحل</a><a href='#schedule'>المواعيد</a><a href='#location'>الموقع</a><a href='#prices'>الاشتراك</a><a href='#faq'>أسئلة</a><a href='#contact'>تواصل</a></nav>
+
+<nav class="dock" aria-label="تواصل سريع">
+  <a class="s" href="https://docs.google.com/forms/d/e/1FAIpQLScKnGyQJm1tVAwCmLIBW-2SmKTeUDIll0J1OcExLEVU18pzGQ/viewform" target="_blank" rel="noopener">اشترك</a>
+  <a class="c" href="tel:+201142033548">اتصل</a>
+  <a class="w" href="https://wa.me/201142033548?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D8%AD%D8%B5%D8%A9%20%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9%20%D9%81%D9%8A%20%D8%A3%D9%83%D8%A7%D8%AF%D9%8A%D9%85%D9%8A%D8%A9%20%D8%A7%D9%84%D8%B9%D9%85%D8%AF%D8%A9.%0A%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D9%84%D8%A7%D8%B9%D8%A8%3A%20%0A%D8%A7%D9%84%D8%B3%D9%86%3A%20">احجز تجربة</a>
+</nav>
+<script>
+(function(){
+  var ar=function(n){return Number(n).toLocaleString('ar-EG')};
+  var WA='https://wa.me/201142033548?text=';
+  var G=[
+    {n:'الأطفال',a:'٥ – ٨ سنوات',lo:5,hi:8,c:'#1664d9'},
+    {n:'الناشئين',a:'٩ – ١٢ سنة',lo:9,hi:12,c:'#e0a800'},
+    {n:'الشباب',a:'١٣ – ١٨ سنة',lo:13,hi:18,c:'#2f9e4f'}
+  ];
+
+  /* 1) من مجموعة ابني */
+  var inp=document.getElementById('age'),res=document.getElementById('res');
+  function digits(s){return s.replace(/[٠-٩]/g,function(d){return '٠١٢٣٤٥٦٧٨٩'.indexOf(d)})}
+  function find(){
+    var v=parseInt(digits(inp.value),10);
+    if(isNaN(v)){res.innerHTML='';return}
+    var g=G.filter(function(x){return v>=x.lo&&v<=x.hi})[0];
+    if(!g){res.innerHTML=`<div class='res'><h3>${v<5?'لسه صغير شوية':'فوق ١٨ سنة'}</h3><p>كلمنا على واتساب وهنشوفلك أنسب حل.</p><a class='btn wa' href='${WA}${encodeURIComponent('السلام عليكم، عايز أسأل عن الأكاديمية.')}'>كلمنا على واتساب</a></div>`;return}
+    var m=WA+encodeURIComponent('السلام عليكم، عايز أحجز حصة تجربة في أكاديمية العمدة.\nاسم اللاعب: \nالسن: '+v);
+    res.innerHTML=`<div class='res' style='--c:${g.c}'><h3>${g.n} <small style='color:var(--muted);font-weight:400'>${g.a}</small></h3><p>الأكاديمية كل اتنين وخميس، من ٤ لحد ١٠ مساءً<br>الاشتراك من ٤٠٠ جنيه في الشهر.</p><a class='btn wa' href='${m}'>احجز حصة تجربة</a></div>`;
+  }
+  inp.addEventListener('input',find);
+
+  /* 2) التمرين الجاي (توقيت القاهرة) */
+  function cairo(){
+    var o={};
+    new Intl.DateTimeFormat('en-US',{timeZone:'Africa/Cairo',weekday:'short',hour:'numeric',minute:'numeric',hourCycle:'h23'}).formatToParts(new Date()).forEach(function(x){o[x.type]=x.value});
+    return ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].indexOf(o.weekday)*1440+(+o.hour%24)*60+(+o.minute);
+  }
+  function live(){
+    var el=document.getElementById('live'),now=cairo(),best=null,cur=null,dn=['الاتنين','الخميس'];
+    [0,3].forEach(function(d,i){
+      var s=d*1440+960;
+      if(now>=s&&now<s+360)cur=true;
+      var w=s>now?s-now:s+10080-now;
+      if(!best||w<best.w)best={w:w,day:dn[i]};
+    });
+    if(cur){el.innerHTML=`<span class='dot'></span>الأكاديمية <b>مفتوحة</b> دلوقتي`;return}
+    var w=best.w,dd=Math.floor(w/1440),hr=Math.floor(w/60)%24,mn=w%60,p=[];
+    if(dd)p.push(ar(dd)+' يوم');
+    if(hr)p.push(ar(hr)+' ساعة');
+    if(!dd&&mn)p.push(ar(mn)+' دقيقة');
+    el.innerHTML=`الأكاديمية بتفتح: <b>${best.day}</b> ٤ مساءً — بعد ${p.join(' و ')||'لحظات'}`;
+  }
+  live();setInterval(live,30000);
+
+  /* 3) حركة: عدّ الأرقام + ظهور الأقسام + شريط التنقل */
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting)return;
+    var el=e.target;io.unobserve(el);
+    if(el.dataset.n){
+      var n=+el.dataset.n,t0=null;
+      (function f(t){t0=t0||t;var k=Math.min((t-t0)/900,1);el.textContent=ar(Math.round(n*k));if(k<1)requestAnimationFrame(f)})(performance.now());
+    }else el.classList.add('in');
+  })},{threshold:.15});
+  document.querySelectorAll('.stats b').forEach(function(b){io.observe(b)});
+  document.querySelectorAll('section .card,section .ticket,.trial,.pc-txt,.faq details,.sg h3').forEach(function(el){el.classList.add('rv');io.observe(el)});
+  var nav=document.getElementById('topnav');
+  addEventListener('scroll',function(){nav.classList.toggle('on',scrollY>380)},{passive:true});
+
+  /* 5) الدفع الأونلاين */
+  document.getElementById('paywa').href=WA+encodeURIComponent('السلام عليكم، حوّلت اشتراك أكاديمية العمدة.\nاسم اللاعب: \nمدة الاشتراك: \n(مرفق صورة التحويل)');
+  document.querySelectorAll('.cp').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=b.getAttribute('data-copy'),old=b.textContent;
+      function ok(){b.textContent='✓ تم النسخ';setTimeout(function(){b.textContent=old},1800)}
+      function fb(){var a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy');ok()}catch(e){}document.body.removeChild(a)}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,fb)}else fb();
+    });
+  });
+
+  /* 4) QR توضيحي على كارت اللاعب */
+  var seed=11,q="<svg viewBox='0 0 11 11' width='100%' height='100%' aria-hidden='true'>";
+  function rnd(){seed=(seed*9301+49297)%233280;return seed/233280}
+  for(var i=0;i<11;i++)for(var j=0;j<11;j++){
+    var f=(i<4&&j<4)||(i<4&&j>6)||(i>6&&j<4);
+    if(!f&&rnd()>.5)q+=`<rect x='${j}' y='${i}' width='1' height='1'/>`;
+  }
+  [[0,0],[8,0],[0,8]].forEach(function(p){q+=`<rect x='${p[0]}' y='${p[1]}' width='3' height='3'/><rect x='${p[0]+1}' y='${p[1]+1}' width='1' height='1' fill='#fff'/>`});
+  document.getElementById('pqr').innerHTML=q+'</svg>';
+})();
+</script>
+</body>
+</html>
